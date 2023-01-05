@@ -66,27 +66,6 @@ COMMANDS                                        *eunuch-commands*
 :Llocate[!] {args}      Run `locate` and load the results into the location
                         list.  Jump to the first result unless ! is given.
 
-                                                *eunuch-:SudoEdit*
-:SudoEdit [file]        Edit a file using sudo.  This overrides any read
-                        permission issues, plus allows you to write the file
-                        with :w!.
-
-                                                *eunuch-:SudoWrite*
-:SudoWrite              Use sudo to write the file to disk.  Handy when you
-                        forgot to use sudo to invoke Vim.  This uses :SudoEdit
-                        internally, so after the first invocation you can
-                        subsequently use :w!.
-
-                        Both sudo commands are implemented using `sudo -e`,
-                        also known as sudoedit.  This has the advantage of
-                        respecting sudoedit permissions in /etc/sudoers, and
-                        the constraint of not allowing edits to symlinks or
-                        files in writable directories, both of which can be
-                        abused in some circumstances to write to files that
-                        were not intended.  These restrictions can be lifted
-                        with the sudoedit_follow and sudoedit_checkdir sudo
-                        options, respectively.
-
                                                 *eunuch-:Wall* *eunuch-:W*
 :Wall                   Like |:wall|, but for windows rather than buffers.
 :W                      It also writes files that haven't changed, which is
