@@ -14,8 +14,6 @@ include:
 * `:Lfind`/`:Llocate`: Like above, but use the location list.
 * `:Wall`: Write every open window.  Handy for kicking off tools like
   [guard][].
-* `:SudoWrite`: Write a privileged file with `sudo`.
-* `:SudoEdit`: Edit a privileged file with `sudo`.
 * Typing a shebang line causes the file type to be re-detected.  Additionally
   the file will be automatically made executable (`chmod +x`) after the next
   write.
